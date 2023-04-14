@@ -25,9 +25,6 @@ function loadInitialPage() {
 
   const tabNames = ['home', 'menu', 'contact'];
   tabNames.forEach((name) => {
-    // const tabContainer = document.createElement('div');
-    // tabContainer.classList.add('tab-container');
-    // header.appendChild(tabContainer);
     const tab = document.createElement('div');
     tab.classList.add(`${name}-tab`);
     tab.classList.add('tab');
@@ -37,10 +34,10 @@ function loadInitialPage() {
 }
 
 function createBody(tab) {
-  if (tab === 'home') {
-    const main = document.createElement('main');
-    content.appendChild(main);
+  const main = document.createElement('main');
+  content.appendChild(main);
 
+  if (tab === 'home') {
     const title = document.createElement('h2');
     title.classList.add('home-title');
     title.textContent = 'Pizza Planet';
@@ -69,8 +66,42 @@ function createBody(tab) {
       hoursContainer.appendChild(dayRow);
     }
   }
-}
+  if (tab === 'menu') {
+    const title = document.createElement('h2');
+    title.classList.add('menu-title');
+    title.textContent = 'Appetizers';
+    main.appendChild(title);
 
-const buttons = document.querySelectorAll('.tab');
+    const menuItemContainer = document.createElement('div');
+    menuItemContainer.classList.add('menu-item-container');
+    main.appendChild(menuItemContainer);
+    const itemTitle = document.createElement('h3');
+    itemTitle.classList.add('item-title');
+    itemTitle.textContent = 'French Onion Soup';
+    menuItemContainer.appendChild(itemTitle);
+    const itemDescription = document.createElement('p');
+    itemDescription.classList.add('item-description');
+    itemDescription.textContent = 'A classic - made with vegetable broth.';
+    menuItemContainer.appendChild(itemDescription);
+  }
+  if (tab === 'contact') {
+    const title = document.createElement('h2');
+    title.classList.add('contact-title');
+    title.textContent = 'Contact Us';
+    main.appendChild(title);
+
+    const locationContainer = document.createElement('div');
+    locationContainer.classList.add('location-container');
+    main.appendChild(locationContainer);
+    const locationTitle = document.createElement('h3');
+    locationTitle.classList.add('location-title');
+    locationTitle.textContent = 'Headquarters';
+    locationContainer.appendChild(locationTitle);
+    const location = document.createElement('p');
+    location.classList.add('location');
+    location.textContent = '123 Main Street';
+    locationContainer.appendChild(location);
+  }
+}
 
 export { loadInitialPage, createBody };

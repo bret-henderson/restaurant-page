@@ -12,7 +12,6 @@ body {
 
 header {
   display: grid;
-  gap: 32px;
   grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 150px));
   grid-template-rows: 1fr;
   justify-items: center;
@@ -28,13 +27,6 @@ header {
   max-width: 100%;
   max-height: 100%;
 }
-
-/* header > .tab-container {
-  cursor: pointer;
-  display: flex;
-  align-items: stretch;
-  height: 100%;
-} */
 
 header > .tab {
   font-size: 1.5rem;
